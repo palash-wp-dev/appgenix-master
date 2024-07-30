@@ -1,0 +1,101 @@
+/* Mission css */
+
+.mission__wrap {
+    &__contents {
+        padding: 70px 80px;
+        @include responsive(xl) {
+            padding: 70px 40px; 
+        }
+        @include responsive(lg) {
+            padding: 40px 20px; 
+        }
+        @include responsive(allPhone) {
+            padding: 40px 30px 70px; 
+        }
+        @include responsive(xs) {
+            padding: 30px 20px 70px; 
+        }
+    }
+    &__thumb {
+        position: relative;
+        img {
+            @include responsive(allPhone) {
+                width: 100%;
+            }
+        }
+        &__icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 70px;
+            width: 70px;
+            font-size: 40px;
+            background-color: var(--main-color-one);
+            color: var(--white);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all .3s;
+            @include responsive(vxxs) {
+                height: 50px;
+                width: 50px;
+                font-size: 30px;
+            }
+            .material-symbols-outlined {
+                font-size: 40px;
+                @include responsive(allPhone) {
+                    font-size: 30px;
+                }
+            }
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                -webkit-transform: translateX(-50%) translateY(-50%);
+                -ms-transform: translateX(-50%) translateY(-50%);
+                transform: translateX(-50%) translateY(-50%);
+                display: block;
+                width: 100%;
+                height: 100%;
+                background: var(--main-color-one);
+                border-radius: 50%;
+                z-index: -1;
+            }
+            &::before {
+                animation: pulsing 1500ms ease-out infinite;
+            }
+            &::after {
+                transition: all 200ms;
+            }
+            &:focus {
+                background-color: var(--main-color-one);
+                color: var(--white);
+            }
+            &:hover {
+                background-color: var(--white);
+                color: var(--main-color-one);
+                &::before,
+                &::after {
+                    background-color: var(--white);
+                }
+            }
+        }
+    }
+}
+
+@keyframes pulsing {
+    0% {
+        -webkit-transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+        opacity: 0;
+    }
+}

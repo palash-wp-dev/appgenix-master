@@ -1,0 +1,12 @@
+/* Page Demo Css */
+
+.pageDemo__item {
+    box-shadow: 0 0 20px var(--border-color);
+    border-radius: 10px;
+    &__thumb {
+        img {
+            border-radius: 10px;
+            width: 100%;
+        }
+    }
+}

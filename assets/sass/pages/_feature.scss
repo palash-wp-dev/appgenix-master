@@ -1,0 +1,62 @@
+/* Feature css */
+
+
+.feature__tabs {
+    display: block;
+    margin-inline: auto;
+    text-align: center;
+    ul.tabs {
+        display: inline-flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        justify-content: center;
+        background-color: var(--section-bg);
+        padding: 10px;
+        border-radius: 7px;
+        li {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 20px;
+            color: var(--heading-color);
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            &.active {
+                background-color: var(--main-color-one);
+                color: var(--white);
+                font-weight: 500;
+            }
+        }
+    }
+}
+.feature_single {
+    &__group {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        flex-wrap: wrap;
+        &:not(:first-child) {
+            margin-top: 100px;
+        }
+        &__item {
+            border-radius: 7px;
+            width: calc(100% / 4 - 18px);
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            @include responsive(lg) {
+                width: calc(100% / 3 - 16px);
+            }
+            @include responsive(allPhone) {
+                width: calc(100% / 2 - 12px);
+            }
+            @include responsive(xxs) {
+                width: calc(100% / 1 - 0px);
+            }
+        }
+    }
+}

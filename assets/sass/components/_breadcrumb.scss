@@ -1,0 +1,86 @@
+/* Breadcrumb area */
+
+.breadcrumb_area {
+    position: relative;
+}
+.breadcrumb_bg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.breadcrumb_padding {
+    padding: 140px 0 70px;
+    @include responsive(allPhone) {
+        padding: 100px 0 35px;
+    }
+}
+
+.breadcrumb-border {
+    border-top: 2px solid rgba($steam-color, .4);
+}
+
+.breadcrumb__contents {
+    &__title {
+        font-size: 40px;
+        line-height: 1.2;
+        color: var(--heading-color);
+        flex-grow: 1;
+        @include responsive(xs) {
+            font-size: 20px;
+            line-height: 28px;
+        }
+    }
+    &__list {
+        display: flex;
+        align-items: center;
+        margin: 7px 0 -5px;
+        flex-shrink: 0;
+        &__item {
+            font-size: 16px;
+            font-weight: 400;
+            color: var(--paragraph-color);
+            position: relative;
+            @include transition(200ms);
+            @include responsive(allPhone) {
+                font-size: 15px;
+            }
+            &:hover {
+                color: var(--main-color-one);
+            }
+            &:not(:last-child) {
+                padding-right: 20px;
+                @include responsive(xxs) {
+                    padding-right: 15px;
+                }
+                @include responsive(vxxs) {
+                    padding-right: 10px;
+                }
+                &::after {
+                    position: absolute;
+                    right: -6px;
+                    top: 50%;
+                    @include transform(translateY(-50%));
+                    @include fontAwesome("\f101");
+                }
+            }
+            &:not(:first-child) {
+                padding-left: 20px;
+                @include responsive(xxs) {
+                    padding-left: 15px;
+                }
+                @include responsive(vxxs) {
+                    padding-left: 10px;
+                }
+            }
+        }
+    }
+}
+
+.text-center {
+    .breadcrumb__contents {
+        &__list {
+            justify-content: center;
+        }
+    }
+}

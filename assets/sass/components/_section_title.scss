@@ -1,0 +1,79 @@
+/*-------------------------
+    Section Title
+-------------------------*/
+
+.new_sectionTitle {
+    text-align: center;
+    max-width: 600px;
+    margin-inline: auto;
+    &.text-left {
+        text-align: left;
+        margin-inline: unset;
+        .section-para {
+            padding: 0;
+        }
+    }
+    &.title_flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 15px 10px;
+        max-width: 100%;
+    }
+    .subtitle {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+        color: var(--paragraph-color);
+        margin-bottom: 20px;
+        display: block;
+        background: linear-gradient(to right, var(--main-color-two) 0%, var(--main-color-one) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-transform: uppercase;
+    }
+    .title {
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 1.2;
+        margin: -6px 0 0;
+        color: var(--heading-color);
+        display: block;
+        .title_color {
+            color: var(--main-color-one);
+        }
+        &__shapes {
+            position: relative;
+            display: inline-flex;
+            flex-direction: column;
+            justify-content: center;
+            img {
+                width: max-content;
+                margin-inline: auto;
+            }
+        }
+        @include responsive(allPhone) {
+            font-size: 36px;
+        }
+        @include responsive(xs) {
+            font-size: 30px;
+            line-height: 35px;
+        }
+        @include responsive(vxxs) {
+            font-size: 26px;
+        }
+    }
+    .section_line {
+        height: 4px;
+        width: 150px;
+        background-color: #333;
+        background: linear-gradient(90deg, var(--success-color) 0%, rgba(var(--success-color-rgb), .1) 100%);
+    }
+    .section_para {
+        display: block;
+        font-size: 16px;
+        line-height: 26px;
+        color: var(--light-color);
+    }
+}

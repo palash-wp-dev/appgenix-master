@@ -1,0 +1,35 @@
+/* make Css */
+.make_area {}
+.make {
+    &__thumb {
+        img {
+            border-radius: 10px;
+            animation: 3s leftRight linear infinite;
+        }
+    }
+    &__list {
+        list-style: none;
+        padding: 0;
+        &__item {
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            color: var(--paragraph-color);
+            position: relative;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            &::before {
+                content: "\f00c";
+                font-family: "Font Awesome 6 Free";
+                font-weight: 900;
+                color: var(--success-color);
+                flex-shrink: 0;
+                font-size: 16px;
+            }
+            &:not(:first-child) {
+                margin-top: 10px;
+            }
+        }
+    }
+}

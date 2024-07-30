@@ -1,0 +1,16 @@
+/* Payment Gateway css */
+
+.payment_gateway {
+    &__flex {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    &__item {
+        border: 1px solid var(--border-color);
+        border-radius: 7px;
+        padding: 10px 15px;
+    }
+}

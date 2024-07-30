@@ -1,0 +1,50 @@
+/* App Css */
+.app_bg {
+    background-color: var(--section-bg);
+}
+
+.app_area {
+}
+
+.app_wrapper {
+    padding: 40px 40px 0 40px;
+    @include responsive(xl) {
+        padding: 20px 20px 0;
+    }
+    @include responsive(lg) {
+        padding: 20px 20px 0;
+    }
+    @include responsive(allPhone) {
+        padding: 20px 20px 0;
+    }
+    &__thumb {
+        display: flex;
+        align-items: flex-end;
+        gap: 24px;
+        @include responsive(sm){
+            flex-direction: column-reverse;
+            align-items: center;
+            justify-content: center;
+        }
+        img {
+            &:nth-child(2) {
+                padding-bottom: 50px;
+                @include responsive(sm) {
+                    padding-bottom: 0px;
+                }
+            }
+        }
+    }
+    &__contents {
+        padding: 100px 0;
+        @include responsive(xl) {
+            padding: 30px 0;
+        }
+        @include responsive(lg) {
+            padding: 30px 0;
+        }
+        @include responsive(allPhone) {
+            padding: 30px 0;
+        }
+    }
+}

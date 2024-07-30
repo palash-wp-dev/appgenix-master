@@ -1,0 +1,219 @@
+/* Slider Custom Css */
+
+.nav_one {
+    position: relative;
+    &:hover {
+        .prev-icon,
+        .next-icon {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    &.nav-color-two {
+        .prev-icon,
+        .next-icon {
+            background: var(--border-color);
+            &:hover {
+                background-color: var(--secondary-color);
+                color: $white;
+            }
+        }
+    }
+    .prev-icon,
+    .next-icon {
+        position: absolute;
+        left: -70px;
+        bottom: 0%;
+        left: 50%;
+        @include transform(translateX(-50%));
+        font-size: 30px;
+        cursor: pointer;
+        z-index: 9;
+        background: var(--border-color);
+        color: var(--heading-color);
+        @include transition(300ms);
+        @include flexCenter;
+        height: 50px;
+        width: 50px;
+        visibility: visible;
+        opacity: 0;
+        &:hover {
+            background-color: var(--main-color-one);
+            color: $white;
+        }
+        @include responsive(xxl) {
+            left: -25px;
+        }
+        @include responsive(xl) {
+            left: -25px;
+        }
+        @include responsive(lg) {
+            left: -25px;
+        }
+        @include responsive(allPhone) {
+            left: -25px;
+        }
+        @include responsive(xs) {
+            left: 0px;
+        }
+    }
+    .next-icon {
+        left: auto;
+        right: -70px;
+        @include responsive(xxl) {
+            right: -25px;
+        }
+        @include responsive(xl) {
+            right: -25px;
+        }
+        @include responsive(lg) {
+            right: -25px;
+        }
+        @include responsive(allPhone) {
+            right: -25px;
+        }
+        @include responsive(xs) {
+            right: 0px;
+        }
+    }
+}
+
+.append_flex {
+    @include flexBetween;
+    flex-wrap: wrap;
+    gap: 20px 5px;
+}
+
+.append_search {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    &.append-color-two {
+        .prev-icon,
+        .next-icon {
+            &:hover {
+                background-color: var(--secondary-color);
+                border-color: var(--secondary-color);
+                color: $white;
+            }
+        }
+    }
+    .prev-icon,
+    .next-icon {
+        font-size: 30px;
+        cursor: pointer;
+        border: 1px solid var(--border-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        width: 50px;
+        font-size: 22px;
+        z-index: 9;
+        color: var(--heading-color);
+        background-color: var(--border-color);
+        border-radius: 50%;
+        @include transition(300ms);
+        &:hover {
+            border-color: var(--main-color-one);
+            color: $white;
+            background-color: var(--main-color-one);
+        }
+    }
+    .prev-icon {
+        right: 55px;
+    }
+}
+
+
+/* Dot Style */
+
+.dot_one {
+    &.white-dot {
+        .slick-dots {
+            li {
+                background-color: rgba($white, .6);
+                &.slick-active {
+                    background: $white;
+                }
+            }
+        }
+    }
+    &.dot-absolute {
+        .slick-dots {
+            position: absolute;
+            bottom: 30px;
+            right: 0px;
+            @include responsive(xxs) {
+                bottom: 20px;
+            }
+            @include responsive(vxxs) {
+                bottom: 10px;
+            }
+        }
+    }
+    &.dot-color-two {
+        .slick-dots {
+            li {
+                background-color: $steam-color;
+                &.slick-active {
+                    background: var(--main-color-two);
+                }
+            }
+        }
+    }
+    .slick-dots {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 30px;
+        padding: 10px 0 0;
+        li {
+            text-indent: -9999px;
+            height: 6px;
+            width: 8px;
+            background: var(--main-color-one);
+            border-radius: 10px;
+            display: inline-block;
+            margin: 0 5px;
+            cursor: pointer;
+            transition: all .5s;
+            &.slick-active {
+                background: var(--main-color-one);
+                width: 50px;
+                border-radius: 10px;
+            }
+            button {
+                border: 0;
+                outline: none;
+            }
+        }
+    }
+}
+
+.slider-inner-margin {
+    .slick-slide {
+        margin: 12px;
+    }
+    .slick-list {
+        margin: -12px;
+    }
+}
+
+.slider-inner-margin-10 {
+    .slick-slide {
+        margin: 5px;
+    }
+    .slick-list {
+        margin: -5px;
+    }
+}
+
+.slider-inner-padding {
+    .slick-slide {
+        padding: 12px;
+    }
+    .slick-list {
+        padding: -12px;
+    }
+}

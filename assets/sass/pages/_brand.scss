@@ -1,0 +1,55 @@
+/* Brand css */
+
+.brand {
+    &__wrap {
+        background-color: var(--white);
+        padding: 24px 0;
+        box-shadow:  0 0 20px var(--border-color);
+        overflow: hidden;
+        margin-top: -45px;
+        position: relative;
+        &.style_02 {
+            box-shadow: none;
+            padding: 0;
+        }
+        @include responsive(allPhone) {
+            padding: 24px 12px;
+        }
+        &__flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        &__item {
+            width: calc(100% / 5 - 19.2px);
+            border: 1px solid var(--border-color);
+            padding: 10px 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
+            @include responsive(allPhone) {
+                width: calc(100% / 3 - 16px);
+            }
+            @include responsive(sm) {
+                width: calc(100% / 2 - 12px);
+            }
+            @include responsive(xxs) {
+                width: calc(100% / 1 - 0px);
+            }
+            &__thumb {
+                img {
+                    max-width: 160px;
+                }
+            }
+        }
+    }
+    &__thumb {
+        text-align: center;
+        img {
+            margin-inline: auto;
+        }
+    }
+}

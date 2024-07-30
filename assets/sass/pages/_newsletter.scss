@@ -1,0 +1,60 @@
+/* Newsletter css */
+
+.newsletter {
+    &__wrap {
+        background-color: var(--section-bg-1);
+        padding: 80px 80px;
+        margin-bottom: -100px;
+        position: relative;
+        z-index: 0;
+        @include responsive(lg) {
+            padding: 50px;
+        }
+        @include responsive(allPhone) {
+            padding: 50px;
+        }
+        @include responsive(xs) {
+            padding: 50px 30px;
+        }
+        @include responsive(xxs) {
+            padding: 50px 20px;
+        }
+        @include responsive(vxxs) {
+            padding: 30px 12px;
+        }
+    }
+    &__title {
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 1.2;
+        color: var(--heading-color);
+        @include responsive(lg) {
+            font-size: 28px;
+        }
+        @include responsive(xxs) {
+            font-size: 24px;
+        }
+    }
+    &__form {
+        &__single {
+            position: relative;
+            overflow: hidden;
+            input {
+                padding-right: 160px !important;
+                @include responsive(xs) {
+                    padding-right: 130px !important;
+                }
+                @include responsive(vxxs) {
+                    padding-right: 110px !important;
+                }
+            }
+            button {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                z-index: 2;
+                height: 100%;
+            }
+        }
+    }
+}

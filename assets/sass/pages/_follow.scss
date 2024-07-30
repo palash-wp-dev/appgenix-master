@@ -1,0 +1,196 @@
+/* Follow css */
+@media screen and (min-width: 1500px) {
+    .container-two {
+        max-width: 1464px;
+    }
+}
+
+
+.follow__wrapper {
+    position: relative;
+    &__flex {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 80px;
+        @include responsive(xxl) {
+            gap: 48px;
+        }
+        @include responsive(xl) {
+            gap: 24px;
+        }
+        @include responsive(lg) {
+            gap: 24px;
+        }
+        @include responsive(allPhone) {
+            gap: 24px;
+        }
+    }
+    &__lineShape {
+        svg {
+            position: absolute;
+            top: 6px;
+            left: -50px;
+            right: -50px;
+            z-index: -1;
+            @include responsive(xxl) {
+                top: 0;
+                width: -webkit-fill-available;
+            }
+            @include responsive(xl) {
+                top: 0;
+                left: -30px;
+                right: -30px;
+                width: -webkit-fill-available;
+            }
+            @include responsive(lg) {
+                top: -7px;
+                left: -12px;
+                right: -12px;
+                width: -webkit-fill-available;
+            }
+            @include responsive(allPhone) {
+                display: none;
+            }
+            path {
+                stroke-dasharray: 5;
+                animation: fillAnimation 30s linear infinite;
+            }
+        }
+    }
+}
+.follow__item {
+    width: calc(100% / 4 - 60px);
+    @include responsive(xxl) {
+        width: calc(100% / 4 - 36px);
+    }
+    @include responsive(xl) {
+        width: calc(100% / 4 - 18px);
+    }
+    @include responsive(lg) {
+        width: calc(100% / 4 - 18px);
+    }
+    @include responsive(allPhone) {
+        width: calc(100% / 2 - 12px);
+        height: 100%;
+    }
+    @include responsive(xxs) {
+        width: calc(100% / 1 - 0px);
+    }
+    &:nth-child(even) {
+        margin-top: 65px;
+        @include responsive(xl) {
+            margin-top: 50px;
+        }
+        @include responsive(lg) {
+            margin-top: 40px;
+        }
+        @include responsive(allPhone) {
+            margin-top: 0px;
+        }
+    }
+    &__number {
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+        background-color: var(--main-color-one);
+        color: var(--white);
+        border-radius: 50%;
+        margin-bottom: 40px;
+        @include responsive(allPhone) {
+            margin-bottom: 20px;
+        }
+    }
+    &__box {
+        background-color: var(--white);
+        padding: 30px;
+        box-shadow: 0 0 20px var(--box-shadow);
+        position: relative;
+        overflow: hidden;
+        transition: all .3s;
+        @include responsive(xl) {
+            padding: 20px;
+        }
+        @include responsive(lg) {
+            padding: 20px 12px; 
+        }
+        @include responsive(sm) {
+            padding: 20px 12px;
+        }
+        &:hover {
+            transform: translateY(-5px);
+            &::before {
+                visibility: visible;
+                opacity: 1;
+                width: 100%;
+            }
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background-color: var(--main-color-one);
+            visibility: hidden;
+            opacity: 0;
+            transition: all .4s;
+        }
+    }
+    &__icon {
+        font-size: 40px;
+        color: var(--white);
+        img {
+            max-width: 60px;
+        }
+    }
+    &__contents {
+        &__title {
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 24px;
+            color: var(--heading-color);
+            @include responsive(lg) {
+                font-size: 18px;
+            }
+        }
+        &__para {
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 400;
+            color: var(--paragraph-color);
+            font-family: var(--heading-font);
+        }
+    }
+    &__btn {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--paragraph-color);
+        transition: all .3s;
+        i,
+        .material-symbols-outlined {
+            font-size: 22px;
+        }
+        &:hover {
+            color: var(--main-color-one);
+        }
+    }
+}
+.text-center {
+    .follow__item__btn {
+        justify-content: center;
+    }
+}
+
+@keyframes fillAnimation {
+    0% {
+        stroke-dashoffset: 1000;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
